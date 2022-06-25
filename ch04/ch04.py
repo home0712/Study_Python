@@ -194,3 +194,77 @@ print(student1.name)
 print(student1.gpa)
 print(student2.gpa)
 
+
+
+########## Object Functions ##########
+
+# Obj Function: a function that we can use inside of a class
+
+### Student.py ###
+class Student:
+	# map out what attributes a student should have
+	def __init__(self, name, major, gpa): # self is referring to the actual object
+		self.name = name 
+		self.major = major
+		self.gpa = gpa
+
+	def on_honor_roll(self):
+		if self.gpa >= 3.5:
+			return True
+		else: 
+			return False
+	
+		
+		
+		
+### app.py ###
+from Student import Student
+
+student1 = Student("Oscar", "Accounting", 3.1)
+student2 = Student("Phyllis", "Business", 3.8)
+
+print(student2.on_honor_roll()))
+
+
+
+########## Inheritance ##########
+
+# able to have a class that has all the functionality of another class 
+# w/o having to physically write out any of the same methods or attributes
+
+### Chef.py ###
+class Chef:
+	
+	def make_chicken(self):
+		print("The chef makes a chicken")
+	def make_salad(self):
+		print("The chef makes a salad")
+	def make_special_dish(self):
+		print("The chef makes bbq ribs")
+
+### app.py ###
+from Chef import Chef
+
+myChef = Chef()
+myChef.make_chicken()
+
+### ChineseChef.py ###
+# To make a different type of Chef 
+
+from Chef import Chef
+Class ChineseChef(Chef):
+	
+	# override
+	def make_speical_dish(self):
+		print("The chef makes orange chicken")
+	
+	# new
+	def make_fried_rice(self):
+		print("The chef makes fried rice")
+		
+
+########## Python Interpreter ##########
+
+# An environment that we can use to execute python cmd
+# open up a command prompt (terminal)
+
